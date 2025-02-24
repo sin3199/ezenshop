@@ -3,7 +3,7 @@
 
 PROJECT="ezenshop-1.0.0"
 PROJECT_NAME=ezenshop
-PROJECT_FULL_PATH="/home/ec2-user/app1/step1"
+PROJECT_FULL_PATH="/home/ec2-user/app2/step1"
 JAR_FILE="$PROJECT_FULL_PATH/$PROJECT.jar"
 LOG_PATH="$PROJECT_FULL_PATH/logs"
 
