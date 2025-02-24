@@ -9,9 +9,9 @@ on:
 env:
   PROJECT_NAME: ezenshop
   AWS_REGION: ap-northeast-2
-  AWS_S3_BUCKET: ez-springboot-build
-  AWS_CODE_DEPLOY_APPLICATION: ez-springboot-webservice
-  AWS_CODE_DEPLOY_GROUP: ez-springboot-webservice-group
+  AWS_S3_BUCKET: ezenshop1212-springboot-build
+  AWS_CODE_DEPLOY_APPLICATION: ezenshop-springboot-webservice
+  AWS_CODE_DEPLOY_GROUP: ezenshop-springboot-webservice-group
 
 jobs:
   build:
