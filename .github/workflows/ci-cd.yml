@@ -1,14 +1,17 @@
 name: Deploy to Amazon EC2
 
+# 이벤트 : 워크플로우가 언제 실행이 될지를 결정하는 이벤트 작업
+# main 브랜치에 push 작업이 발생이 되면
 on:
   push:
     branches: [ "main" ]
-  pull_request:
+  pull_request: # 협업할 때
     branches: [ "main" ]
 
+# 워크플로우에서 변수선언
 env:
   PROJECT_NAME: ezenshop
-  AWS_REGION: ap-northeast-2
+  AWS_REGION: ap-northeast-2  # 리전 : 아시아/태평양 서울
   AWS_S3_BUCKET: ezenshop1212-springboot-build
   AWS_CODE_DEPLOY_APPLICATION: ezenshop-springboot-webservice
   AWS_CODE_DEPLOY_GROUP: ezenshop-springboot-webservice-group
@@ -34,6 +37,9 @@ jobs:
         chmod +x mvnw
         ./mvnw clean package -DskipTests
       # ./mvnw -B package --file pom.xml
+
+  ### 위의 설정까지는 GitHub Actions 빌드
+  ### 아래 설정은 빌드된 프로젝트를 AWS의 S3에 zip 파일로 업로드 EC2에서 배포
     
     - name: AWS credential 설정
       uses: aws-actions/configure-aws-credentials@v4
